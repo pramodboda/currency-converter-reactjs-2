@@ -9,16 +9,16 @@ import IconButton from "@mui/material/IconButton";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
-import ColorModeContext from "../../contexts/ColorModeContext";
+import DarkModeContext from "../../contexts/DarkModeContext";
 
 export default function ToggleThemeBtn() {
   const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  const darkMode = React.useContext(DarkModeContext);
   return (
     <Button
       color="secondary"
       variant="text"
-      onClick={colorMode.toggleColorMode}
+      onClick={darkMode.toggleDarkMode}
       endIcon={
         theme.palette.mode === "dark" ? (
           <Brightness7Icon />

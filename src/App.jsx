@@ -1,33 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import DarkModeProvider from "./contexts/DarkModeProvider.jsx";
+
+import Box from "@mui/material/Box";
+import ToggleThemeBtn from "./components/ToggleThemeBtn/ToggleThemeBtn";
+import CurrencyConverter from "./components/CurrencyConverter/CurrencyConverter";
+import CopyrightFooter from "./components/Copyright/CopyrightFooter";
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <DarkModeProvider>
+      <Box
+        display="flex"
+        minHeight="100vh"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        sx={{
+          backgroundColor: "background.default",
+          color: "text.primary",
+        }}
+      >
+        <Box sx={{ position: "absolute", top: "1rem", right: "1rem" }}>
+          <ToggleThemeBtn />
+        </Box>
+        <CurrencyConverter />
+
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            padding: "1rem",
+          }}
+        >
+          <CopyrightFooter />
+        </Box>
+      </Box>
+    </DarkModeProvider>
     </>
   )
 }
