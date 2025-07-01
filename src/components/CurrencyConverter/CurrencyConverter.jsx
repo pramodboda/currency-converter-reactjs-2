@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import Axios from "axios";
 
-import Paper from "@mui/material/Paper";
+
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
@@ -17,6 +15,8 @@ import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 // import SwapHorizontalCircleIcon from "@mui/icons-material/SwapHorizontalCircle";
 import { AiOutlineSwap } from "react-icons/ai";
+
+import { green } from '@mui/material/colors';
 
 function CurrencyConverter() {
     // Initializing all the state variables
@@ -76,19 +76,18 @@ function CurrencyConverter() {
                 }}
             >
 
-                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem"}}>
+                <Box sx={{  backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius:"1rem"}}>
                     <Stack
                         direction="row"
-
-                        alignItems="center"
-                        justifyContent="space-between"
+                        // alignItems="center"
+                        // justifyContent="space-between"
                         sx={{ gap: 2 }}
                     >
                         <Box sx={{ maxWidth: "50%" }}>
                             <Typography
                                 variant="body2"
                                 color="text.secondary"
-
+                                sx={{ pb: 0.5 }}
                             >
                                 Convert Amount
                             </Typography>
@@ -96,10 +95,12 @@ function CurrencyConverter() {
                                 fullWidth
                                 inputProps={{ "aria-label": "Without label" }}
                                 id="amount"
-                                variant="filled"
+                                // variant="filled"
                                 size="small"
                                 onChange={(e) => setInput(e.target.value)}
                                 value={input}
+
+                                sx={{border: 0, outline:"none", "& .MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":{borderColor: "red"}}}
                             />
                         </Box>
 
@@ -110,7 +111,7 @@ function CurrencyConverter() {
                                 sx={{ pb: 0.5 }}
                             >From
                             </Typography>
-                            <FormControl fullWidth size="small" variant="filled">
+                            <FormControl fullWidth size="small">
                                 <Select
                                     value={from}
                                     onChange={fromSelectChange}
@@ -133,11 +134,15 @@ function CurrencyConverter() {
 
                     </Stack>
                 </Box>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ width: "100%", height: "1.8rem", display:"flex", justifyContent:"center", alignItems:"center", textAlign:"center",
+                // border: "1px solid red"
+                }}>
 
                     <IconButton
-                        color="primary"
+                        // color="success"
+                        variant="contained"
                         aria-label="Swap"
+                        sx={{backgroundColor:green[500]}}
                         onClick={() => {
                             flip();
                         }}
@@ -147,7 +152,7 @@ function CurrencyConverter() {
 
 
                 </Box>
-                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem"}}>
+                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius:"1rem"}}>
                     <Typography
                         variant="body2"
                         color="text.secondary"
