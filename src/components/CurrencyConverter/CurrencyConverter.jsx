@@ -66,101 +66,57 @@ function CurrencyConverter() {
 
     return (
         <React.Fragment>
-            <Card
-                variant="outlined"
+            <Box
+                // variant="outlined"
                 sx={{
+                    backgroundColor: "transparent",
                     width: "20rem",
                     boxShadow:
                         "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px",
                 }}
             >
-                <Paper>
-                    <CardContent>
-                        <Box sx={{ mb: 2 }}>
-                            <Stack
-                                direction="row"
-                                alignItems="center"
-                                justifyContent="space-between"
+
+                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem"}}>
+                    <Stack
+                        direction="row"
+
+                        alignItems="center"
+                        justifyContent="space-between"
+                        sx={{ gap: 2 }}
+                    >
+                        <Box sx={{ maxWidth: "50%" }}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+
                             >
-                                <Box sx={{ mb: 2 }}>
-                                    <Typography
-                                        variant="body2"
-                                        color="text.secondary"
-                                        sx={{ pb: 0.5 }}
-                                    >
-                                        Convert Amount
-                                    </Typography>
-                                    <TextField
-                                        fullWidth
-                                        inputProps={{ "aria-label": "Without label" }}
-                                        id="amount"
-                                        variant="filled"
-                                        size="small"
-                                        onChange={(e) => setInput(e.target.value)}
-                                        value={input}
-                                    />
-                                </Box>
-
-                                <Box sx={{ minWidth: "50%" }}>
-                                    <Typography
-                                        variant="body2"
-                                        color="text.secondary"
-                                        sx={{ pb: 0.5 }}
-                                    >
-                                        From
-                                    </Typography>
-                                    <FormControl fullWidth size="small" variant="filled">
-                                        <Select
-                                            value={from}
-                                            onChange={fromSelectChange}
-                                            displayEmpty
-                                            inputProps={{ "aria-label": "Without label" }}
-                                            placeholder="From"
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            {options.map((option) => (
-                                                <MenuItem key={option} value={option}>
-                                                    {option.toUpperCase()}
-                                                </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
-                                </Box>
-
-
-                            </Stack>
-                        </Box>
-                        <Box sx={{ mb: 2 }}>
-
-                            <IconButton
-                                color="primary"
-                                aria-label="Swap"
-                                onClick={() => {
-                                    flip();
-                                }}
-                            >
-                                <AiOutlineSwap fontSize="1.6rem" />
-                            </IconButton>
-
-
+                                Convert Amount
+                            </Typography>
+                            <TextField
+                                fullWidth
+                                inputProps={{ "aria-label": "Without label" }}
+                                id="amount"
+                                variant="filled"
+                                size="small"
+                                onChange={(e) => setInput(e.target.value)}
+                                value={input}
+                            />
                         </Box>
 
-                        <Box sx={{ minWidth: 110 }}>
+                        <Box sx={{ minWidth: "50%" }}>
                             <Typography
                                 variant="body2"
                                 color="text.secondary"
                                 sx={{ pb: 0.5 }}
-                            >
-                                To
+                            >From
                             </Typography>
                             <FormControl fullWidth size="small" variant="filled">
                                 <Select
-                                    value={to}
-                                    onChange={toSelectChange}
+                                    value={from}
+                                    onChange={fromSelectChange}
                                     displayEmpty
                                     inputProps={{ "aria-label": "Without label" }}
+                                    placeholder="From"
                                 >
                                     <MenuItem value="">
                                         <em>None</em>
@@ -174,35 +130,76 @@ function CurrencyConverter() {
                             </FormControl>
                         </Box>
 
-                        <Box bgColor="text.secondary" sx={{ p: 1 }}>
-                            <Typography variant="body2" color="text.secondary">
-                                Converted Amount:
-                            </Typography>
-                            <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-                                {input +
-                                    " " +
-                                    from.toUpperCase() +
-                                    " = " +
-                                    output.toFixed(2) +
-                                    " " +
-                                    to.toUpperCase()}
-                            </Typography>
-                        </Box>
-                    </CardContent>
-                    <Button
-                        variant="contained"
+
+                    </Stack>
+                </Box>
+                <Box sx={{ mb: 2 }}>
+
+                    <IconButton
                         color="primary"
-                        fullWidth
-                        size="large"
+                        aria-label="Swap"
                         onClick={() => {
-                            convert();
+                            flip();
                         }}
-                        sx={{ padding: "0.7rem" }}
                     >
-                        Convert
-                    </Button>
-                </Paper>
-            </Card>
+                        <AiOutlineSwap fontSize="1.6rem" />
+                    </IconButton>
+
+
+                </Box>
+                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem"}}>
+                    <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ pb: 0.5 }}
+                    >
+                        To
+                    </Typography>
+                    <FormControl fullWidth size="small" variant="filled">
+                        <Select
+                            value={to}
+                            onChange={toSelectChange}
+                            displayEmpty
+                            inputProps={{ "aria-label": "Without label" }}
+                        >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            {options.map((option) => (
+                                <MenuItem key={option} value={option}>
+                                    {option.toUpperCase()}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Box>
+                <Box bgColor="text.secondary" sx={{ p: 1 }}>
+                    <Typography variant="body2" color="text.secondary">
+                        Converted Amount:
+                    </Typography>
+                    <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                        {input +
+                            " " +
+                            from.toUpperCase() +
+                            " = " +
+                            output.toFixed(2) +
+                            " " +
+                            to.toUpperCase()}
+                    </Typography>
+                </Box>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    size="large"
+                    onClick={() => {
+                        convert();
+                    }}
+                    sx={{ padding: "0.7rem" }}
+                >
+                    Convert
+                </Button>
+            </Box>
         </React.Fragment>
     );
 }
