@@ -11,15 +11,14 @@ import CopyrightFooter from "./components/Copyright/CopyrightFooter";
 function App() {
 
   return (
-    <>
      <DarkModeProvider>
       <Box
-        display="flex"
-        minHeight="100vh"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
         sx={{
+          display:"flex",
+        minHeight:"100vh",
+        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"column",
           backgroundColor: "background.default",
           color: "text.primary",
         }}
@@ -41,7 +40,7 @@ function App() {
         </Box>
       </Box>
     </DarkModeProvider>
-    </>
+   
   )
 }
 
