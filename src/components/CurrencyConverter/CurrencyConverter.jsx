@@ -162,6 +162,18 @@ function CurrencyConverter() {
                                 To
                             </Typography>
                             <Typography variant="h5" sx={{ fontWeight: "bold" }}>{output.toFixed(2)}</Typography>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{ pb: 0.5 }}
+                            >
+                                To
+                            </Typography>
+                            <FormControl fullWidth size="small">
+                            <TextField value={output.toFixed(2)}>
+                            
+                            </TextField>
+                            </FormControl>
                         </Box>
                         <Box sx={{ width: "50%" }}>
                             <Typography
