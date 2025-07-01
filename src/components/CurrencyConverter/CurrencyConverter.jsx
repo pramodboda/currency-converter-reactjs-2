@@ -89,7 +89,7 @@ function CurrencyConverter() {
                                 color="text.secondary"
                                 sx={{ pb: 0.5 }}
                             >
-                                Convert Amount
+                                Convert
                             </Typography>
                             <TextField
                                 fullWidth
@@ -191,16 +191,16 @@ function CurrencyConverter() {
                     </Stack>
                     <Box bgColor="text.secondary" sx={{ p: 1 }}>
                     <Typography variant="body2" color="text.secondary">
-                        Converted Amount:
-                    </Typography>
-                    <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-                        {input +
+                        Converted Rate:  {input +
                             " " +
                             from.toUpperCase() +
                             " = " +
                             output.toFixed(2) +
                             " " +
                             to.toUpperCase()}
+                    </Typography>
+                    <Typography variant="caption" sx={{ fontWeight: "bold" }}>
+                       
                     </Typography>
                 </Box>
                 </Box>
