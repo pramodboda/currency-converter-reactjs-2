@@ -162,18 +162,7 @@ function CurrencyConverter() {
                                 To
                             </Typography>
                             <Typography variant="h5" sx={{ fontWeight: "bold" }}>{output.toFixed(2)}</Typography>
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
-                                sx={{ pb: 0.5 }}
-                            >
-                                To
-                            </Typography>
-                            <FormControl fullWidth size="small">
-                            <TextField value={output.toFixed(2)}>
                             
-                            </TextField>
-                            </FormControl>
                         </Box>
                         <Box sx={{ width: "50%" }}>
                             <Typography
@@ -203,8 +192,8 @@ function CurrencyConverter() {
                         </Box>
                     </Stack>
                     <Box bgColor="text.secondary" sx={{ p: 1 }}>
-                        <Typography variant="body2" color="text.secondary">
-                            Converted Rate:  {input +
+                        <Typography variant="caption" color="text.secondary">
+                            <span style={{fontWeight:"bold"}}>Converted Rate:</span>  {input +
                                 " " +
                                 from.toUpperCase() +
                                 " = " +
@@ -212,9 +201,7 @@ function CurrencyConverter() {
                                 " " +
                                 to.toUpperCase()}
                         </Typography>
-                        <Typography variant="caption" sx={{ fontWeight: "bold" }}>
-
-                        </Typography>
+                        
                     </Box>
                 </Box>
 
