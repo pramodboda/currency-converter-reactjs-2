@@ -76,7 +76,7 @@ function CurrencyConverter() {
                 }}
             >
 
-                <Box sx={{  backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius:"1rem"}}>
+                <Box sx={{ backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius: "1rem" }}>
                     <Stack
                         direction="row"
                         // alignItems="center"
@@ -100,7 +100,7 @@ function CurrencyConverter() {
                                 onChange={(e) => setInput(e.target.value)}
                                 value={input}
 
-                                sx={{border: 0, outline:"none", "& .MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":{borderColor: "red"}}}
+                                sx={{ border: 0, outline: "none", "& .MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline": { borderColor: "red" } }}
                             />
                         </Box>
 
@@ -134,15 +134,16 @@ function CurrencyConverter() {
 
                     </Stack>
                 </Box>
-                <Box sx={{ width: "100%", height: "1.8rem", display:"flex", justifyContent:"center", alignItems:"center", textAlign:"center",
-                // border: "1px solid red"
+                <Box sx={{
+                    width: "100%", height: "1.8rem", display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center",
+                    // border: "1px solid red"
                 }}>
 
                     <IconButton
                         // color="success"
                         variant="contained"
                         aria-label="Swap"
-                        sx={{backgroundColor:green[500]}}
+                        sx={{ backgroundColor: green[500] }}
                         onClick={() => {
                             flip();
                         }}
@@ -150,61 +151,61 @@ function CurrencyConverter() {
                         <AiOutlineSwap fontSize="1.6rem" />
                     </IconButton>
                 </Box>
-                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius:"1rem"}}>
-                    <Stack sx={{flexDirection:"row",  gap: 2, alignContent:"center", justifyContent:"center"}}>
-                        <Box sx={{width: "50%"}}>
-                        <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ pb: 0.5 }}
-                    >
-                        To
-                    </Typography>
+                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius: "1rem" }}>
+                    <Stack sx={{ flexDirection: "row", gap: 2, alignContent: "center", justifyContent: "center" }}>
+                        <Box sx={{ width: "50%" }}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{ pb: 0.5 }}
+                            >
+                                To
+                            </Typography>
                             <Typography variant="h5" sx={{ fontWeight: "bold" }}>{output.toFixed(2)}</Typography>
                         </Box>
-                        <Box sx={{width: "50%"}}>
-                        <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ pb: 0.5 }}
-                    >
-                        To
-                    </Typography>
-                    <FormControl fullWidth size="small">
-                        <Select
-                            value={to}
-                            onChange={toSelectChange}
-                            displayEmpty
-                            inputProps={{ "aria-label": "Without label" }}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            {options.map((option) => (
-                                <MenuItem key={option} value={option}>
-                                    {option.toUpperCase()}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
+                        <Box sx={{ width: "50%" }}>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{ pb: 0.5 }}
+                            >
+                                To
+                            </Typography>
+                            <FormControl fullWidth size="small">
+                                <Select
+                                    value={to}
+                                    onChange={toSelectChange}
+                                    displayEmpty
+                                    inputProps={{ "aria-label": "Without label" }}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    {options.map((option) => (
+                                        <MenuItem key={option} value={option}>
+                                            {option.toUpperCase()}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                         </Box>
                     </Stack>
                     <Box bgColor="text.secondary" sx={{ p: 1 }}>
-                    <Typography variant="body2" color="text.secondary">
-                        Converted Rate:  {input +
-                            " " +
-                            from.toUpperCase() +
-                            " = " +
-                            output.toFixed(2) +
-                            " " +
-                            to.toUpperCase()}
-                    </Typography>
-                    <Typography variant="caption" sx={{ fontWeight: "bold" }}>
-                       
-                    </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Converted Rate:  {input +
+                                " " +
+                                from.toUpperCase() +
+                                " = " +
+                                output.toFixed(2) +
+                                " " +
+                                to.toUpperCase()}
+                        </Typography>
+                        <Typography variant="caption" sx={{ fontWeight: "bold" }}>
+
+                        </Typography>
+                    </Box>
                 </Box>
-                </Box>
-                
+
                 <Button
                     variant="contained"
                     color="primary"
