@@ -149,18 +149,28 @@ function CurrencyConverter() {
                     >
                         <AiOutlineSwap fontSize="1.6rem" />
                     </IconButton>
-
-
                 </Box>
                 <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius:"1rem"}}>
-                    <Typography
+                    <Stack sx={{flexDirection:"row",  gap: 2, alignContent:"center", justifyContent:"center"}}>
+                        <Box sx={{width: "50%"}}>
+                        <Typography
                         variant="body2"
                         color="text.secondary"
                         sx={{ pb: 0.5 }}
                     >
                         To
                     </Typography>
-                    <FormControl fullWidth size="small" variant="filled">
+                            <Typography variant="h5" sx={{ fontWeight: "bold" }}>{output.toFixed(2)}</Typography>
+                        </Box>
+                        <Box sx={{width: "50%"}}>
+                        <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ pb: 0.5 }}
+                    >
+                        To
+                    </Typography>
+                    <FormControl fullWidth size="small">
                         <Select
                             value={to}
                             onChange={toSelectChange}
@@ -177,8 +187,9 @@ function CurrencyConverter() {
                             ))}
                         </Select>
                     </FormControl>
-                </Box>
-                <Box bgColor="text.secondary" sx={{ p: 1 }}>
+                        </Box>
+                    </Stack>
+                    <Box bgColor="text.secondary" sx={{ p: 1 }}>
                     <Typography variant="body2" color="text.secondary">
                         Converted Amount:
                     </Typography>
@@ -192,6 +203,8 @@ function CurrencyConverter() {
                             to.toUpperCase()}
                     </Typography>
                 </Box>
+                </Box>
+                
                 <Button
                     variant="contained"
                     color="primary"
