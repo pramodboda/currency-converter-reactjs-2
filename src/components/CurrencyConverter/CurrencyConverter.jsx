@@ -67,16 +67,14 @@ function CurrencyConverter() {
     return (
         <React.Fragment>
             <Box
-                // variant="outlined"
                 sx={{
                     backgroundColor: "transparent",
                     width: "20rem",
-                    boxShadow:
-                        "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px",
+                    // boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px",
                 }}
             >
 
-                <Box sx={{ backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius: "1rem" }}>
+                <Box sx={{ backgroundColor: "#f9f9f9", padding: "1rem 1rem 1.5rem 1rem", borderRadius: "1rem" }}>
                     <Stack
                         direction="row"
                         // alignItems="center"
@@ -99,8 +97,6 @@ function CurrencyConverter() {
                                 size="small"
                                 onChange={(e) => setInput(e.target.value)}
                                 value={input}
-
-                                sx={{ border: 0, outline: "none", "& .MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline": { borderColor: "red" } }}
                             />
                         </Box>
 
@@ -143,7 +139,7 @@ function CurrencyConverter() {
                         // color="success"
                         variant="contained"
                         aria-label="Swap"
-                        sx={{ backgroundColor: green[500] }}
+                        sx={{ backgroundColor: green[500],transform: "rotate(90deg)" }}
                         onClick={() => {
                             flip();
                         }}
@@ -151,7 +147,7 @@ function CurrencyConverter() {
                         <AiOutlineSwap fontSize="1.6rem" />
                     </IconButton>
                 </Box>
-                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1.5rem 1rem 1rem", borderRadius: "1rem" }}>
+                <Box sx={{ mb: 2, backgroundColor: "#f9f9f9", padding: "1rem 1rem 0.5rem 1rem", borderRadius: "1rem" }}>
                     <Stack sx={{ flexDirection: "row", gap: 2, alignContent: "center", justifyContent: "center" }}>
                         <Box sx={{ width: "50%" }}>
                             <Typography
@@ -191,7 +187,7 @@ function CurrencyConverter() {
                             </FormControl>
                         </Box>
                     </Stack>
-                    <Box bgColor="text.secondary" sx={{ p: 1 }}>
+                    <Box bgColor="text.secondary" sx={{ padding: "1rem 0 0 1rem", textAlign:"right" }}>
                         <Typography variant="caption" color="text.secondary">
                             <span style={{fontWeight:"bold"}}>Converted Rate:</span>  {input +
                                 " " +
